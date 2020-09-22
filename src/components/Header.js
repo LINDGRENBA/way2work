@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import React from 'react';
 
 function Header(){
   return (
@@ -15,3 +16,5 @@ function Header(){
     </React.Fragment>
   );
 }
+
+export default Header;

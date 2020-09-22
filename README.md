@@ -38,7 +38,7 @@
 ## **🐛 `Bugs`**
 | Message or Error | Cause | Fix |
 |---------|-------|-----|
-|  |  |  |
+| When using variables from .env file to config firebase, returns message `FirebaseError: projectId must be a string in FirebaseApp.options`, works if use exact values in configuration, but then not secure, if switched to template literals, receive message `{"error":{"code":400,"message":"API key not valid. Please pass a valid API key.","errors":[{"message":"API key not valid. Please pass a valid API key.","domain":"global","reason":"badRequest"}],"status":"INVALID_ARGUMENT"}}` | ? | ? |
 |  |  |  |
 |  |  |  |
 |  |  |  |
