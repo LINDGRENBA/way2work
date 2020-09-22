@@ -34,6 +34,7 @@
 ## **'Reach Goals'**
 * Bonus: A user should be able to see the combined data on a survey in their dashboard. For instance, if a survey provides a 1-5 rating, return an average rating for all surveys.
 * Challenging: Try using a library like D3 to visualize data from surveys. This is only recommended if you have time to spare, interest in data visualization, and are doing a week-long project.
+* Dynamic forms where the user can add more questions as they create the survery (instead of a static number of questions)
 
 ## **🐛 `Bugs`**
 | Message or Error | Cause | Fix |

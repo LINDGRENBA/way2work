@@ -13,6 +13,52 @@ class SurveyControl extends React.Component {
     };
   }
 
+  handleClick = () => {
+    if (this.state.selectedSurvey != null) {
+      this.setState({
+        selectedSurvey: null,
+        editing: false
+      });
+    } else {
+      const { dispatch } = this.props;
+      const action = a.toggleForm();
+      dispatch(action);
+    }
+  }
+
+  handleAddingNewSurveyToList = (newSurvey) => {
+    const { dispatch } = this.props;
+    const action = a.toggleForm();
+    dispatch(action);
+  }
+
+  handleChangingSelectedSurvey = (id) => {
+    this.props.firestore.get({collection: 'surveys', doc: id}).then((survey) => {
+      const firestoreSurvey = {
+        names: survey.get("names"),
+        location: survey.get("location"),
+        issue: survey.get("issue"),
+        id: survey.id
+      }
+      this.setState({selectedSurvey: firestoreSurvey });
+    });
+  }
+
+  handleEditClick = () => {
+    this.setState({editing: true});
+  }
+
+  handleEditingSurveyInList = () => {
+    this.setState({
+      editing: false,
+      selectedSurvey: null
+    });
+  }
+
+  handleDeletingSurvey = (id) => {
+    this.props.firestore.delete({collection: 'surveys', doc: id});
+    this.setState({selectedSurvey: null});
+  }
 
 render () {
   const auth = this.props.firebase.auth();
